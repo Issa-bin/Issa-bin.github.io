@@ -1,0 +1,1005 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Okatch - Professional Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+    awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --accent: #e11d48;
+            --accent-light: #fecdd3;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-light);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-gray);
+
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(37, 99, 235, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #c1123a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(225, 29, 72, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-light);
+        }
+
+        .btn-outline:hover {
+            background: rgba(225, 29, 72, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--light-gray);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-content p {
+            color: var(--gray);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: var(--accent);
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: var(--light-gray);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .education-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .degree {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .education-card .date {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-light);
+            margin-top: 5px;
+
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-light);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--light-gray);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--light-gray);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .left::after, .right::after {
+                left: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Emmanuel Okatch</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Emmanuel Okatch</h1>
+                <p>Biomedical Engineering | Banking & Finance | Data Science</p>
+
+                <div class="hero-tags">
+                    <div class="tag">Biotechnologist</div>
+                    <div class="tag">Bioinformatics Scientist</div>
+                    <div class="tag">Genetic Counselor</div>
+                    <div class="tag">Public Health Volunteer</div>
+                </div>
+
+                <div>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#experience" class="btn btn-outline">View Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Professional Summary</h3>
+                    <p>Hardworking, self-driven, resilient and passionate individual with 3 years experience in Hospitality and 2 years in corporate sales in banking. Currently pursuing certification in data science from Africa Leadership Experience-Holberton School.</p>
+                    <p>Committed to leveraging interdisciplinary expertise in biomedical technology,banking, and Data Science to drive innovation and solve complex problems.</p>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>5+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>3</h4>
+                            <p>Degrees/Certs</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-medal"></i>
+                            <h4>5+</h4>
+                            <p>Trainings Completed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <!-- Placeholder for image -->
+                    <div style="background: linear-gradient(45deg, var(--light-gray), var(--gray));height: 100%; border-radius: 10px; display: flex; align-items: center; justify-content: center;color: var(--secondary);">
+                        <i class="fas fa-user" style="font-size: 5rem; opacity: 0.3;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+            <!-- Equity Bank -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Equity Bank Limited</h3>
+                        <span class="date">March 2022 - March 2024</span>
+                        <p><strong>Sales Representative</strong></p>
+                        <ul>
+                            <li>Worked as Relationship officer-payments</li>
+                            <li>Managed customer service at the inquiries desk</li>
+                            <li>Significantly improved branch CSAT score from 80.11% to 92.98%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Café Espresso -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Café Espresso - Nyali</h3>
+                        <span class="date">2019 - 2020</span>
+                        <p><strong>Bartender</strong></p>
+                        <ul>
+                            <li>Worked at coffee section as a bartender</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ole-Sereni Hotel -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>The Ole-Sereni Hotel – Nairobi</h3>
+                        <span class="date">2017 - 2018</span>
+                        <p><strong>Captain Waiter</strong></p>
+                        <ul>
+                            <li>Worked as a Host and at banquets</li>
+                            <li>Served as waiter and bartender</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cafe Arabica -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Cafe Arabica English Point Marina</h3>
+                        <span class="date">2016 - 2017</span>
+                        <p><strong>Head Waiter</strong></p>
+                        <ul>
+                            <li>Worked as a waiter and coffee barista</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Caffesserie -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Caffesserie City Mall, Nyali</h3>
+                        <span class="date">2015</span>
+                        <p><strong>Bartender</strong></p>
+                        <ul>
+                            <li>Started as a bar-steward and worked up to bartender position</li>
+                            <li>Worked at the blender and coffee section making cocktails andcoffee</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Skills</h2>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-user-tie"></i> Banking & Finance</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Customer Service</span>
+                            <span>95%</span>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Branch Operations</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Sales & Relationship Management</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Data Science</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Biomedical Technology</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Laboratory Techniques</span>
+                            <span>90%</span>
+
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-concierge-bell"></i> Hospitality</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Bartending</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Customer Service</span>
+                            <span>96%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 96%"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Banquet Management</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Training</h2>
+            </div>
+
+            <div class="education-grid">
+                <!-- Holberton School -->
+
+                <div class="education-card">
+                    <h3>Africa Leadership Experience - Holberton School</h3>
+                    <span class="degree">Data Science</span>
+                    <span class="date">2024</span>
+                    <p>Currently pursuing certification in software engineering with focus on computer science.</p>
+                </div>
+
+                <!-- ALU-ALX Africa -->
+                <div class="education-card">
+                    <h3>ALU-ALX Africa</h3>
+                    <span class="degree">Professional Foundation Certificate</span>
+                    <span class="date">2024</span>
+                    <p>Completed professional foundation training program.</p>
+                </div>
+
+                <!-- Maseno University -->
+                <div class="education-card">
+                    <h3>Maseno University</h3>
+                    <span class="degree">BSc. Medical Biotechnology with IT</span>
+                    <span class="date">2015 - 2024</span>
+                    <p>Bachelor's degree in Medical Biotechnology with Information Technology components.</p>
+                </div>
+
+                <!-- Shimo La Tewa School -->
+
+                <div class="education-card">
+                    <h3>Shimo La Tewa School</h3>
+                    <span class="degree">KCSE Certification</span>
+                    <span class="date">Completed 2014</span>
+                    <p>73/84 Cluster Points, 3.3 GPA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Contact Me</h2>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:emmanuelokatch9@gmail.com">emmanuelokatch9@gmail.com</a>
+                        </div>
+                    </div
+                
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+254718631144">+254 718 631144</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Mombasa, Kenya</p>
+                            <p>P.O box 96150 Mombasa-Kenya</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="mailto:emmanuelokatch9@gmail.com" class="contact-btn">
+                        <i class="fas fa-envelope"></i> Email Me</a>
+                        <a href="tel:+254718631144" class="contact-btn">
+                        <i class="fas fa-phone"></i> Call Me</a>
+                        <a href="https://www.linkedin.com/in/emmanuel-okatch-73175629a"target="_blank" class="contact-btn">
+                        <i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <!-- Placeholder for contact form -->
+                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding:2rem; height: 100%;">
+                            <h3 style="margin-bottom: 1.5rem; color: white;">Send a Message</h3>
+                            <div style="display: grid; gap: 1rem;">
+                                <input type="text" placeholder="Your Name" style="padding: 0.8rem; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255,0.1); color: white;">
+                                <input type="email" placeholder="Your Email" style="padding: 0.8rem;border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255,255, 0.1); color: white;">
+                                <textarea placeholder="Your Message" rows="5" style="padding: 0.8rem;border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255,255, 0.1); color: white;"></textarea>
+                                <button class="btn" style="width: 100%;">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Emmanuel Okatch</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/emmanuel-okatch-73175629a"target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:emmanuelokatch9@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+254718631144">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <p>&copy; 2025 Emmanuel Okatch. All Rights Reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Redirect Github pages URL to custom domain
+        if (window.location.hostname === 'Issa-bin.githhub.io') {
+            window.location.href = 'https://okatchemmanuel.com' + window.location.pathname;
+        }
+    </script>
+</body>
+</html>
+```
