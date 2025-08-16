@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -511,6 +511,95 @@
             transform: translateY(-3px);
         }
 
+        /* Form Styles*/
+        .contact-form {
+            background: rgba(255, 255, 255,0.12);
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+            color: white;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-light);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(225, 29, 72, 0.3);
+
+        }
+
+        .submit-btn:hover {
+            background: #c1123a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(225, 29, 72, 0.4);
+        }
+
+        .form-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px rgba(40, 167, 69, 0.5);
+            color: #f8d7da;
+        }
         /* Footer */
         footer {
             background: var(--secondary);
@@ -540,6 +629,10 @@
         .social-links a:hover {
             color: var(--accent-light);
             transform: translateY(-3px);
+        }
+
+        .copyright {
+            font-size: 1.05rem;
         }
 
         /* Responsive Design */
@@ -572,6 +665,10 @@
 
             .left::after, .right::after {
                 left: 20px;
+            }
+
+            .contact-buttons {
+                justify-content: center;
             }
 
         }
@@ -631,7 +728,7 @@
                 <div class="about-text">
                     <h3>Professional Summary</h3>
                     <p>Hardworking, self-driven, resilient and passionate individual with 3 years experience in Hospitality and 2 years in corporate sales in banking. Currently pursuing certification in data science from Africa Leadership Experience-Holberton School.</p>
-                    <p>Committed to leveraging interdisciplinary expertise in biomedical technology,banking, and Data Science to drive innovation and solve complex problems.</p>
+                    <p>Committed to leveraging interdisciplinary expertise in biomedical technology,banking, and data science to drive innovation and solve complex problems.</p>
 
                     <div class="about-stats">
                         <div class="stat-card">
@@ -677,8 +774,7 @@
                         <span class="date">March 2022 - March 2024</span>
                         <p><strong>Sales Representative</strong></p>
                         <ul>
-                            <li>Worked as Relationship officer-payments</li>
-                            <li>Managed customer service at the inquiries desk</li>
+                            <li>Managed all aspects of customer service as a Relationship Officer,<br> serving as the primary point of contact for payment inquiries and support</li>
                             <li>Significantly improved branch CSAT score from 80.11% to 92.98%</li>
                         </ul>
                     </div>
@@ -689,9 +785,10 @@
                     <div class="timeline-content">
                         <h3>Café Espresso - Nyali</h3>
                         <span class="date">2019 - 2020</span>
-                        <p><strong>Bartender</strong></p>
+                        <p><strong>Bartender & Barista</strong></p>
                         <ul>
-                            <li>Worked at coffee section as a bartender</li>
+                            <li>Crafted a wide range of alcoholic cocktails and speciality coffee beverages</li>
+                            <li>Managed both bar and coffee inventory, ensuring consistent quality and service</li>
                         </ul>
                     </div>
                 </div>
@@ -703,8 +800,7 @@
                         <span class="date">2017 - 2018</span>
                         <p><strong>Captain Waiter</strong></p>
                         <ul>
-                            <li>Worked as a Host and at banquets</li>
-                            <li>Served as waiter and bartender</li>
+                            <li>Led the front-of-house team, ensuring seamles service and exceptional customer satifaction.</li>
                         </ul>
                     </div>
                 </div>
@@ -712,11 +808,11 @@
                 <!-- Cafe Arabica -->
                 <div class="timeline-item right">
                     <div class="timeline-content">
-                        <h3>Cafe Arabica English Point Marina</h3>
+                        <h3>Cafe Arabica English Point - Marina</h3>
                         <span class="date">2016 - 2017</span>
                         <p><strong>Head Waiter</strong></p>
                         <ul>
-                            <li>Worked as a waiter and coffee barista</li>
+                            <li>A seasoned hospitality professional with expertise in both leadersip and beverage preparation.</li>
                         </ul>
                     </div>
                 </div>
@@ -726,10 +822,10 @@
                     <div class="timeline-content">
                         <h3>Caffesserie City Mall, Nyali</h3>
                         <span class="date">2015</span>
-                        <p><strong>Bartender</strong></p>
+                        <p><strong>Barback - Bartender</strong></p>
                         <ul>
-                            <li>Started as a bar-steward and worked up to bartender position</li>
-                            <li>Worked at the blender and coffee section making cocktails andcoffee</li>
+                            <li>Began my career as a bar apprentice, quickly advancing to the bartender role.</li>
+                            <li>Developed expertise in both mixology and coffee preparation, crafting a diverse menu of alcoholic and non-alcoholic beverages.</li>
                         </ul>
                     </div>
                 </div>
@@ -863,8 +959,9 @@
                 <div class="education-card">
                     <h3>Africa Leadership Experience - Holberton School</h3>
                     <span class="degree">Data Science</span>
-                    <span class="date">2024</span>
-                    <p>Currently pursuing certification in software engineering with focus on computer science.</p>
+                    <span class="date">2025</span>
+                    <p>Currently pursuing certification in data science with focus on computer science.</p>
+                    <p>Recipient of The MasterCard Foundation Scholarship</p>
                 </div>
 
                 <!-- ALU-ALX Africa -->
@@ -889,7 +986,8 @@
                     <h3>Shimo La Tewa School</h3>
                     <span class="degree">KCSE Certification</span>
                     <span class="date">Completed 2014</span>
-                    <p>73/84 Cluster Points, 3.3 GPA</p>
+                    <p>73/84 Cluster Points</p>
+                    <p>Recipient of Wings to Fly Scholarship (2011-2014)</p>
                 </div>
             </div>
         </div>
@@ -937,20 +1035,32 @@
                         <a href="https://www.linkedin.com/in/emmanuel-okatch-73175629a"target="_blank" class="contact-btn">
                         <i class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
-                    </div>
-
+                    
                     <div class="contact-form">
                         <!-- Placeholder for contact form -->
-                        <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding:2rem; height: 100%;">
-                            <h3 style="margin-bottom: 1.5rem; color: white;">Send a Message</h3>
-                            <div style="display: grid; gap: 1rem;">
-                                <input type="text" placeholder="Your Name" style="padding: 0.8rem; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255,0.1); color: white;">
-                                <input type="email" placeholder="Your Email" style="padding: 0.8rem;border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255,255, 0.1); color: white;">
-                                <textarea placeholder="Your Message" rows="5" style="padding: 0.8rem;border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255,255, 0.1); color: white;"></textarea>
-                                <button class="btn" style="width: 100%;">Send Message</button>
+                        <h3>Send a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/mjvnzbzj" method="post">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <label for="email">Your email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            </div> 
+
+                            <div class="form-group">
+                                <label for="Messager">Your Message</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Enter your message" required>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+
+                        <div id="form-message" class="form-message"></div>                                
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -995,11 +1105,64 @@
     </script>
 
     <script>
-        // Redirect Github pages URL to custom domain
-        if (window.location.hostname === 'Issa-bin.githhub.io') {
-            window.location.href = 'https://okatchemmanuel.com' + window.location.pathname;
-        }
+        // form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const forMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // show loading state
+            const submitBtn =contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'sending...';
+
+            // create form data
+            const formData = new FormData(contactForm);
+
+            // send form data to formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body:formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    //Success message
+                    formMessage.textContent = "Your message has been sent successfully! I'll get back to you soon.";
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+
+                    //Reset form
+                    contactForm.reset();
+                } else {
+                    // Error message
+                    formMessage.textContent = "Oops! There was a problem sending your message. Please try again.";
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                //Network error
+                formMessage.textContent = "Network error. Please check your connection and try again";
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                
+            })
+            .finally(() => {
+                //Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+
+                //Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            });    
+        })
     </script>
+
 </body>
 </html>
-```
