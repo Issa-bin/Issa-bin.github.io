@@ -569,8 +569,8 @@
         .submit-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--accent);
-            color: white;
+            background: transparent;
+            color: var(--neon-red);
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -578,7 +578,7 @@
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 6px rgba(225, 29, 72, 0.3);
-
+            position: relative; overflow: hidden; z-index: 1;
         }
 
         .submit-btn:hover {
