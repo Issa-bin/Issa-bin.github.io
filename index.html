@@ -223,6 +223,32 @@
             gap: 1.5rem;
             margin-top: 2rem;
         }
+        .about-stats {
+            transform: rotate(-30deg) skew(25deg) translate(0,0) transition:0.5s;  
+            box-shadow: -20px 20px 10px  
+        }
+        .about-stats::before {
+            content: 11;
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            height: 100%;
+            width: 20px;
+            background-color: b1b1b1;
+            transform: 0.5s;
+            transform: rotate(0deg) skewY(-45deg);
+        }
+        .about-stats::after {
+            content: 11;
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            height: 20px;
+            width: 100%;
+            background-color: b1b1b1;
+            transform: 0.5s;
+            transform: rotate(0deg) skewY(-45deg);
+        }
 
         .stat-card {
             background: white;
@@ -234,8 +260,8 @@
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px,-15px) rotate(-30deg) skew(25deg);
+            box-shadow: 50px 50px 50x rgba(0, 0, 0, 0.5);
         }
 
         .stat-card i {
